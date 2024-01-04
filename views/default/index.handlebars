@@ -1,0 +1,179 @@
+{{!-- <div class="row">
+    <div class="col-md-8">
+        {{#each posts}}
+        <div class="post">
+            <div class="image">
+                <img src="{{file}}" alt="" srcset="">
+            </div>
+            <div class="head-box">
+                <h1>{{title}}</h1>
+                <div class="post-metadata">
+                    <div class="date">{{creationDate}}</div>
+                    <div class="user">
+                        {{createdBy}}
+                    </div>
+                </div>
+                <p class="short-description">{{shortDescription}}</p>
+                <div class="post-footer">
+                    <div class="read-more-btn">
+                        <a href="/posts/{{_id}}">Read More</a>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-6 h-6 icon-size">
+                        <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <ul class="pagination justify-content-center mb-4">
+            <li class="page-item">
+                <a class="page-link" href="#">&larr; Older</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Newer &rarr;</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4" id="col4">
+        <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card my-4">
+            <h5 class="card-header">Categories</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled mb-0">
+                            {{#each categories}}
+                            <li></li>
+                                {{title}}
+                           </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card my-4">
+            <h5 class="card-header">Post Title</h5>
+            <div class="card-body">
+                {{#each posts}}
+                            <li>
+                                {{title}}
+                            </li>
+                            {{/each}}
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+<div class="row">
+    <div class="col-md-8" id="mainContent">
+        {{#each posts}}
+        <div class="post">
+            <div class="image">
+                <img src="{{file}}" alt="" srcset="">
+            </div>
+            <div class="head-box">
+                <h1>{{title}}</h1>
+                <div class="post-metadata">
+                    <div class="date">{{creationDate}}</div>
+                    <div class="user">
+                        {{createdBy}}
+                    </div>
+                </div>
+                <p class="short-description">{{shortDescription}}</p>
+                <div class="post-footer">
+                    <div class="read-more-btn">
+                        <a href="/posts/{{_id}}">Read More</a>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-6 h-6 icon-size">
+                        <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <ul class="pagination justify-content-center mb-4">
+            <li class="page-item">
+                <a class="page-link" href="#">&larr; Older</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Newer &rarr;</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4" id="col4">
+        <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button" onclick="filterPosts()">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card my-4">
+            <h5 class="card-header">Categories</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled mb-0">
+                            {{#each categories}}
+                                <li>{{title}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card my-4">
+            <h5 class="card-header">Filtered Post Titles</h5>
+            <div class="card-body">
+                <ul id="filteredPostTitles" class="list-unstyled mb-0">
+                    <!-- Filtered post titles will be displayed here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterPosts() {
+        var searchInput = $('#searchInput').val().toLowerCase();
+
+        $('#mainContent .post').each(function () {
+            var postTitle = $(this).find('.head-box h1').text().toLowerCase();
+
+            if (postTitle.includes(searchInput)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+
+        // Display related post titles in the "Filtered Post Titles" section
+        $('#filteredPostTitles').empty();
+        $('#mainContent .post:visible').each(function () {
+            var postTitle = $(this).find('.head-box h1').text();
+            $('#filteredPostTitles').append('<li>' + postTitle + '</li>');
+        });
+    }
+</script>
+

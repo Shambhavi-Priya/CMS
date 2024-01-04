@@ -1,0 +1,32 @@
+<!-- views/post_detail.handlebars -->
+
+<div class="container blog-pg-container">
+   
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-post">
+                <div class="new-blog-image">
+                    <img src="{{post.file}}" alt="{{post.title}}">
+                </div>
+                 <h1>{{post.title}}</h1>
+                <div class="blog-head-box">
+                    <div class="post-metadata">
+                        <div class="date">{{post.creationDate}}</div>
+                         <div class="user">
+                        {{post.createdBy}}
+                    </div>
+                    </div>
+                    <p class="short-description">{{post.shortDescription}}</p>
+                    <div class="full-description">
+                        {{post.longDescription}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <!-- Add any additional information or widgets here -->
+        </div>
+    </div>
+</div>
